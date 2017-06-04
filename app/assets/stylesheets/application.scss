@@ -10,9 +10,31 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  */
-
 @import "bootstrap-sprockets";
 @import "bootstrap";
+/* header */
+
+#logo {
+  float: left;
+  margin-right: 10px;
+  font-size: 1.7em;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  padding-top: 9px;
+  font-weight: bold;
+}
+
+#logo:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+#content {
+  margin-top: 50px;
+}
+
+ /* User sign up, sign and edit forms. */
 
 .border-form-div {
   max-width: 50%;
