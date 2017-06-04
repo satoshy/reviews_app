@@ -3,7 +3,12 @@ Rails.application.routes.draw do
     get '', to: 'dashboard#index', as: '/'
   end
 
-  resources :videos
+  resources :videos do 
+    collection do 
+      post 'import'
+    end
+  end
+
   resources :comments
   devise_for :users
   root 'home#index'
