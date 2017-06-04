@@ -1,6 +1,7 @@
 class ReviewsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_review, only: [:show, :edit, :update, :destroy]
-
+  before_action :find_video, only: [:new, :create]
   def index
     @reviews = Review.all
   end
@@ -9,7 +10,6 @@ class ReviewsController < ApplicationController
   end
 
   def new
-    @video = Video.find(params[:video_id])
     @review = Review.new
   end
 
@@ -17,7 +17,8 @@ class ReviewsController < ApplicationController
   end
 
   def create
-    @review = Review.new(review_params)
+    @review = @video.reviews.build(review_params)
+    @review.user_id = current_user.id
 
     respond_to do |format|
       if @review.save
@@ -51,6 +52,10 @@ class ReviewsController < ApplicationController
   end
 
   private
+    def find_video
+      @video = Video.find(params[:video_id])
+    end
+
     def set_review
       @review = Review.find(params[:id])
     end
