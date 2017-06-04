@@ -21,6 +21,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'devise'
 
 group :development, :test do
+	gem 'pry'
 	gem 'dotenv-rails'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end

@@ -30,6 +30,8 @@ class VideosController < ApplicationController
   end
 
   def import
+    Video.import(params[:file])
+    redirect_to root_url, notice: "Videos imported."
   end
 
   def update
@@ -60,6 +62,6 @@ class VideosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def video_params
-      params.require(:video).permit(:title, :studio, :released, :status, :versions, :price, :rating, :year, :genre, :aspect, :ups, :release_date)
+      params.require(:video).permit(:title, :studio, :released, :status, :versions, :price, :rating, :year, :genre, :aspect, :upc, :release_date)
     end
 end
