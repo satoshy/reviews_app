@@ -1,6 +1,8 @@
 require 'csv'
 
 class Video < ApplicationRecord
+  has_many :reviews
+  
   def self.import(file)
     CSV.foreach(file.path, headers: true) do |row|
       row = row.to_hash
