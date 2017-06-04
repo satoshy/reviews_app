@@ -1,0 +1,77 @@
+<%= form_with(model: video, local: true) do |form| %>
+  <% if video.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(video.errors.count, "error") %> prohibited this video from being saved:</h2>
+
+      <ul>
+      <% video.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title, id: :video_title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :studio %>
+    <%= form.text_field :studio, id: :video_studio %>
+  </div>
+
+  <div class="field">
+    <%= form.label :released %>
+    <%= form.date_select :released, id: :video_released %>
+  </div>
+
+  <div class="field">
+    <%= form.label :status %>
+    <%= form.number_field :status, id: :video_status %>
+  </div>
+
+  <div class="field">
+    <%= form.label :versions %>
+    <%= form.text_field :versions, id: :video_versions %>
+  </div>
+
+  <div class="field">
+    <%= form.label :price %>
+    <%= form.text_field :price, id: :video_price %>
+  </div>
+
+  <div class="field">
+    <%= form.label :rating %>
+    <%= form.text_field :rating, id: :video_rating %>
+  </div>
+
+  <div class="field">
+    <%= form.label :year %>
+    <%= form.number_field :year, id: :video_year %>
+  </div>
+
+  <div class="field">
+    <%= form.label :genre %>
+    <%= form.text_field :genre, id: :video_genre %>
+  </div>
+
+  <div class="field">
+    <%= form.label :aspect %>
+    <%= form.text_field :aspect, id: :video_aspect %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ups %>
+    <%= form.number_field :ups, id: :video_ups %>
+  </div>
+
+  <div class="field">
+    <%= form.label :release_date %>
+    <%= form.date_select :release_date, id: :video_release_date %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

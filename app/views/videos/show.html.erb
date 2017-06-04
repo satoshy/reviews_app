@@ -1,0 +1,64 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @video.title %>
+</p>
+
+<p>
+  <strong>Studio:</strong>
+  <%= @video.studio %>
+</p>
+
+<p>
+  <strong>Released:</strong>
+  <%= @video.released %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @video.status %>
+</p>
+
+<p>
+  <strong>Versions:</strong>
+  <%= @video.versions %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @video.price %>
+</p>
+
+<p>
+  <strong>Rating:</strong>
+  <%= @video.rating %>
+</p>
+
+<p>
+  <strong>Year:</strong>
+  <%= @video.year %>
+</p>
+
+<p>
+  <strong>Genre:</strong>
+  <%= @video.genre %>
+</p>
+
+<p>
+  <strong>Aspect:</strong>
+  <%= @video.aspect %>
+</p>
+
+<p>
+  <strong>Ups:</strong>
+  <%= @video.ups %>
+</p>
+
+<p>
+  <strong>Release date:</strong>
+  <%= @video.release_date %>
+</p>
+
+<%= link_to 'Edit', edit_video_path(@video) %> |
+<%= link_to 'Back', videos_path %>
